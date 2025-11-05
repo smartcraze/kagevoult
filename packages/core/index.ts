@@ -11,9 +11,12 @@ export * from './browser/webgl-fingerprint';
 export * from './browser/audio-fingerprint';
 export * from './browser/font-detector';
 export * from './browser/fingerprint-collector';
+export * from './browser/raw-attributes';
+export * from './browser/advanced-detection';
+export * from './browser/response-builder';
 
-// Network modules
-export { getIpv4Address } from './network/ip';
+// Network modules (server-side only)
+// Note: getIpv4Address is Node.js only - don't use in browser
 export * from './network/headers';
 export * from './network/tls-fingerprint';
 export * from './network/timing';

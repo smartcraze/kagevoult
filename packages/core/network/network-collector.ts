@@ -19,7 +19,7 @@ import {
   extractProxyHeaders,
   hashHeadersFingerprint,
   detectBrowserFromHeaders,
-  detectProxy,
+  detectProxyHeaders,
   detectBot,
   analyzeHeaderOrder,
 } from './headers';
@@ -111,7 +111,7 @@ export async function collectNetworkFingerprint(
     headersObj[key] = value;
   });
   const proxyHeaders = extractProxyHeaders(headersObj);
-  const proxyInfo = detectProxy(proxyHeaders, headers.headerOrder);
+  const proxyInfo = detectProxyHeaders(proxyHeaders, headers.headerOrder);
 
   // Analyze browser
   const browserInfo = detectBrowserFromHeaders(headers);

@@ -253,7 +253,7 @@ export function detectBrowserFromHeaders(fingerprint: HTTPHeadersFingerprint): {
 /**
  * Detect if request is coming from a proxy/VPN
  */
-export function detectProxy(headers: ProxyHeaders, headerOrder: string[]): {
+export function detectProxyHeaders(headers: ProxyHeaders, headerOrder: string[]): {
   isProxy: boolean;
   proxyType: 'transparent' | 'anonymous' | 'elite' | 'none';
   indicators: string[];

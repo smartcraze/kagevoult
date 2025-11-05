@@ -1,12 +1,11 @@
 import os from "os";
 
-/*
+/**
  * Retrieves the first non-internal IPv4 address of the machine.
  * Throws an error if no valid address is found.
  * Returns the IPv4 address as a string.
  */
-
-function getIpv4Address() {
+export function getIpv4Address() {
   const interfaces = os.networkInterfaces();
 
   for (const name of Object.keys(interfaces)) {
@@ -20,7 +19,3 @@ function getIpv4Address() {
 
   throw new Error("No external IPv4 address found");
 }
-
-export { getIpv4Address };
-
-console.log(getIpv4Address());
